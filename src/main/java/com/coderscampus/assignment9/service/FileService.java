@@ -56,15 +56,15 @@ public class FileService {
 	}
 	public List<Recipe> veganFilter() throws IOException{
 		List<Recipe> veganList = readFile().stream()
-										 .filter(r -> r.getVegan())
-										 .collect(Collectors.toList());
+										   .filter(r -> r.getVegan())
+										   .collect(Collectors.toList());
 		return veganList;
 	}
 	public List<Recipe> veganAndGlutenFreeFilter() throws IOException{
 		List<Recipe> veganAndGlutenFreeList = readFile().stream()
-													.filter(r -> r.getVegan() && r.getGlutenFree())
-													.collect(Collectors.toList());
-		return veganAndGlutenFreeList;
+													    .filter(r -> r.getVegan() && r.getGlutenFree())
+													    .collect(Collectors.toList());
+		return veganAndGlutenFreeList;  
 	}
 	public List<Recipe> vegetarianFilter() throws IOException{
 		List<Recipe> vegetarianList = readFile().stream()

@@ -39,7 +39,6 @@ public class FileController {
 
 	@GetMapping("/vegetarian")
 	public List<Recipe> vegetarian() throws IOException {
-		
 		return fileService.vegetarianFilter();
 	}
 
