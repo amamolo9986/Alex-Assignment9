@@ -23,39 +23,24 @@ public class FileController {
 	}
 
 	@GetMapping("/gluten-free")
-	public List<Recipe> glutenFree() throws IOException {
-		List<Recipe> glutenFreeFilter = fileService.readFile()
-												   .stream()
-												   .filter(r -> r.getGlutenFree())
-												   .collect(Collectors.toList());
-		return glutenFreeFilter;
+	public List<Recipe> getGlutenFreeFilter() throws IOException {
+		return fileService.glutenFreeFilter();
 	}
 
 	@GetMapping("/vegan")
-	public List<Recipe> vegan() throws IOException {
-		List<Recipe> veganFilter = fileService.readFile()
-											   .stream()
-											   .filter(r -> r.getVegan())
-											   .collect(Collectors.toList());
-		return veganFilter;
+	public List<Recipe> getVeganFilter() throws IOException {
+		return fileService.veganFilter();
 	}
 
 	@GetMapping("/vegan-and-gluten-free")
 	public List<Recipe> veganAndGlutenFree() throws IOException {
-		List<Recipe> veganAndGlutenFreeFilter = fileService.readFile()
-														   .stream()
-														   .filter(r -> r.getVegan() && r.getGlutenFree())
-														   .collect(Collectors.toList());
-		return veganAndGlutenFreeFilter;
+		return fileService.veganAndGlutenFreeFilter();
 	}
 
 	@GetMapping("/vegetarian")
 	public List<Recipe> vegetarian() throws IOException {
-		List<Recipe> vegetarianFilter = fileService.readFile()
-												   .stream()
-												   .filter(r -> r.getVegetarian())
-												   .collect(Collectors.toList());
-		return vegetarianFilter;
+		
+		return fileService.vegetarianFilter();
 	}
 
 }
