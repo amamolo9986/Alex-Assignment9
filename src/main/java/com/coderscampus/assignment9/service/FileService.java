@@ -48,29 +48,5 @@ public class FileService {
 		
 		return recipes;
 	}
-	public List<Recipe> glutenFreeFilter() throws IOException{
-		List<Recipe> glutenFreeList = readFile().stream()
-												  .filter(r -> r.getGlutenFree())
-												  .collect(Collectors.toList());
-		return glutenFreeList;
-	}
-	public List<Recipe> veganFilter() throws IOException{
-		List<Recipe> veganList = readFile().stream()
-										   .filter(r -> r.getVegan())
-										   .collect(Collectors.toList());
-		return veganList;
-	}
-	public List<Recipe> veganAndGlutenFreeFilter() throws IOException{
-		List<Recipe> veganAndGlutenFreeList = readFile().stream()
-													    .filter(r -> r.getVegan() && r.getGlutenFree())
-													    .collect(Collectors.toList());
-		return veganAndGlutenFreeList;  
-	}
-	public List<Recipe> vegetarianFilter() throws IOException{
-		List<Recipe> vegetarianList = readFile().stream()
-				   								.filter(r -> r.getVegetarian())
-				   								.collect(Collectors.toList());
-		return vegetarianList;
-	}
 	
 }
